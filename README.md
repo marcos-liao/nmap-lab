@@ -2,7 +2,9 @@
 
 Interactive web-based tool for learning Nmap scanning techniques. Each scan type comes with detailed documentation (fungsi, skenario, MITRE ATT&CK mapping, precautions, impact) and a built-in console to run scans directly from the browser.
 
-![NmapLab Screenshot](https://img.shields.io/badge/scans-30+-blue) ![Python](https://img.shields.io/badge/python-3.10+-green) ![Nmap](https://img.shields.io/badge/nmap-required-red)
+![scans](https://img.shields.io/badge/scans-30+-blue) ![Python](https://img.shields.io/badge/python-3.10+-green) ![Nmap](https://img.shields.io/badge/nmap-required-red)
+
+![NmapLab Preview](screenshots/nmaplab-preview.png)
 
 ## Features
 
