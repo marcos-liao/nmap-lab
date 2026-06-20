@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NmapLab — Interactive Nmap Learning Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="logo">&#9783; NmapLab</span>
+        <span class="badge">learning</span>
+      </div>
+      <div class="topbar-right">
+        <span class="nmap-status" id="nmap-status">checking nmap...</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar"></aside>
+
+      <main class="main-content">
+        <div class="welcome-screen" id="welcome-screen">
+          <div class="welcome-icon">&#9783;</div>
+          <h2>NmapLab</h2>
+          <p>Interactive Nmap Learning Platform</p>
+          <p class="welcome-hint">Pilih scan type dari sidebar untuk mulai belajar.</p>
+        </div>
+
+        <div class="scan-detail" id="scan-detail" style="display:none;">
+
+          <div class="scan-header">
+            <h2 id="scan-title"></h2>
+            <code class="scan-flag" id="scan-flag"></code>
+          </div>
+
+          <div class="info-sections">
+
+            <div class="info-card" id="card-fungsi">
+              <div class="info-card-header" data-toggle="body-fungsi">
+                <span class="info-icon">&#128214;</span>
+                <h3>Fungsi</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-fungsi">
+                <div class="fungsi-subtitle" id="fungsi-subtitle"></div>
+                <div class="fungsi-desc" id="fungsi-desc"></div>
+                <div class="fungsi-steps" id="fungsi-steps"></div>
+                <div class="fungsi-output" id="fungsi-output"></div>
+              </div>
+            </div>
+
+            <div class="info-card" id="card-kapan">
+              <div class="info-card-header" data-toggle="body-kapan">
+                <span class="info-icon">&#128269;</span>
+                <h3>Kapan Pakai Scan Ini?</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-kapan">
+                <div id="kapan-kondisi"></div>
+                <div class="kapan-flow" id="kapan-flow"></div>
+              </div>
+            </div>
+
+            <div class="info-card" id="card-skenario">
+              <div class="info-card-header" data-toggle="body-skenario">
+                <span class="info-icon">&#127919;</span>
+                <h3>Skenario Penggunaan</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-skenario">
+                <div id="skenario-list"></div>
+              </div>
+            </div>
+
+            <div class="info-card" id="card-mitre">
+              <div class="info-card-header" data-toggle="body-mitre">
+                <span class="info-icon">&#9876;</span>
+                <h3>MITRE ATT&CK</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-mitre">
+                <div id="mitre-content"></div>
+              </div>
+            </div>
+
+            <div class="info-card" id="card-precautions">
+              <div class="info-card-header" data-toggle="body-precautions">
+                <span class="info-icon">&#9888;</span>
+                <h3>Precautions</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-precautions">
+                <div id="precautions-list"></div>
+              </div>
+            </div>
+
+            <div class="info-card" id="card-impact">
+              <div class="info-card-header" data-toggle="body-impact">
+                <span class="info-icon">&#128165;</span>
+                <h3>Impact</h3>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="info-card-body open" id="body-impact">
+                <div id="impact-content"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="try-it-section" id="try-it-section">
+            <h3 class="try-it-title">&#9654; Try It</h3>
+            <div class="try-it-bar">
+              <div class="try-it-command">
+                <span class="prompt-symbol">$</span>
+                <span class="command-prefix" id="command-prefix">nmap -sS</span>
+                <input type="text" id="target-input" placeholder="192.168.1.1" spellcheck="false">
+              </div>
+              <div class="try-it-options">
+                <label class="option-label">
+                  <input type="checkbox" id="opt-verbose" value="-v"> -v verbose
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" id="opt-reason" value="--reason"> --reason
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" id="opt-no-ping" value="-Pn"> -Pn no ping
+                </label>
+                <select id="opt-timing" class="timing-select">
+                  <option value="">Timing (default)</option>
+                  <option value="-T0">-T0 Paranoid</option>
+                  <option value="-T1">-T1 Sneaky</option>
+                  <option value="-T2">-T2 Polite</option>
+                  <option value="-T3">-T3 Normal</option>
+                  <option value="-T4">-T4 Aggressive</option>
+                  <option value="-T5">-T5 Insane</option>
+                </select>
+                <span class="option-label ports-label" id="ports-wrapper">Ports: <input type="text" id="opt-ports" placeholder="22,80,443" spellcheck="false" class="ports-input"></span>
+              </div>
+              <button id="btn-run" class="btn-run">Run Scan</button>
+            </div>
+
+            <div class="console" id="console">
+              <div class="console-topbar">
+                <div class="console-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="console-title">NmapLab Console</span>
+                <button class="btn-clear" id="btn-clear">Clear</button>
+              </div>
+              <div class="console-body" id="console-body">
+                <div class="console-line dim">Ready. Enter a target and click Run Scan.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/scans.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
