@@ -78,13 +78,17 @@ pip install -r requirements.txt
 ## Quick Start
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repo
+git clone https://github.com/marcos-liao/nmap-lab.git
+cd nmap-lab
+
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run the server
+# 3. Run the server
 python server.py
 
-# 3. Open browser
+# 4. Open browser
 # http://127.0.0.1:5000
 ```
 
