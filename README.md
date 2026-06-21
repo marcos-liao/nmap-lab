@@ -221,6 +221,10 @@ If the new scan uses flags not yet whitelisted, add them to `ALLOWED_FLAGS` in `
 - Scan timeout: 120 seconds max
 - No shell execution — uses `subprocess` with argument list
 
+## Contributors
+
+- **Marcos** — [@marcos-liao](https://github.com/marcos-liao)
+
 ## License
 
 MIT
