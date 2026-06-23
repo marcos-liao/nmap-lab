@@ -70,6 +70,12 @@ body {
   letter-spacing: -0.5px;
 }
 
+.logo-image {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+
 .badge {
   font-size: 10px;
   text-transform: uppercase;
@@ -201,6 +207,12 @@ body {
   font-size: 64px;
   margin-bottom: 16px;
   opacity: 0.3;
+}
+
+.welcome-logo {
+  width: 280px;
+  height: auto;
+  margin-bottom: 8px;
 }
 
 .welcome-screen h2 {

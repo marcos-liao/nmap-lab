@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="screenshots/Logo_transparant.png" alt="NmapLab Logo" width="400">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="screenshots/Logo_transparant.png">
+    <source media="(prefers-color-scheme: light)" srcset="screenshots/Logo_transparant.png">
+    <img src="screenshots/Logo_transparant.png" alt="NmapLab Logo" width="400" style="background: transparent;">
+  </picture>
 </p>
 
 <p align="center">
