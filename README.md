@@ -1,8 +1,14 @@
-# NmapLab — Interactive Nmap Learning Platform
+<p align="center">
+  <img src="screenshots/Logo_transparant.png" alt="NmapLab Logo" width="400">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/scans-30+-blue" alt="scans">
+  <img src="https://img.shields.io/badge/python-3.10+-green" alt="Python">
+  <img src="https://img.shields.io/badge/nmap-required-red" alt="Nmap">
+</p>
 
 Interactive web-based tool for learning Nmap scanning techniques. Each scan type comes with detailed documentation (fungsi, skenario, MITRE ATT&CK mapping, precautions, impact) and a built-in console to run scans directly from the browser.
-
-![scans](https://img.shields.io/badge/scans-30+-blue) ![Python](https://img.shields.io/badge/python-3.10+-green) ![Nmap](https://img.shields.io/badge/nmap-required-red)
 
 ![NmapLab Preview](screenshots/nmaplab-preview.png)
 
